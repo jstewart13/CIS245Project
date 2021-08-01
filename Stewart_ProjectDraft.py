@@ -3,11 +3,14 @@ import requests
 
 # function to request for data
 def weather_data(query):
+
 # Enter your API key here
 api_key = ""
+
 # base_url variable to store url
 base_url = "http://api.openweathermap.org/data/2.5/weather?"
 complete_url = base_url + "appid=" + api_key + "&" + query
+
 # response object
 res=requests.get(complete_url);
 return res.json();
@@ -21,9 +24,11 @@ print("Weather: {}".format(weathers['weather'][0]['main']))
 
 # main function
 def main():
+
 # Give city name
 city=input('Enter the city:')
 print()
+
 # try-except block
 try:
 query='q='+city;
